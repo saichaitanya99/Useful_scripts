@@ -21,6 +21,10 @@ parser.add_argument('-dm_sw_file', type=str, required=True,help='DM SW file. Thi
 
 args = parser.parse_args()
 
+if not args.dm_sw_file:
+    print("DM SW file not provided")
+    exit()
+
 psrname = args.psrname
 parfile = args.parfile
 raj = None
