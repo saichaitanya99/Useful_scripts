@@ -40,7 +40,7 @@ gs = gridspec.GridSpec(2, 1, height_ratios=[3, 1], hspace=0.1)
 
 mask=np.argsort(psr.toas)
 ax1 = plt.subplot(gs[0])
-ax1.errorbar(psr.toas[mask], psr.residuals, psr.toaerrs*1e-6, color = 'b', fmt='o', alpha=0.5, label='Original TOAs',markersize=2)
+ax1.errorbar(psr.toas()[mask], psr.residuals, psr.toaerrs*1e-6, color = 'b', fmt='o', alpha=0.5, label='Original TOAs',markersize=2)
 ax1.errorbar(rec_toas[0][mask], rec_toas[1], rec_toas[2], color = 'r', fmt='o', label='Recovered TOAs',markersize=2)
 ax1.axhline(0, color='k', linestyle='--')
 ax1.legend()
